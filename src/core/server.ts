@@ -57,7 +57,7 @@ export async function startServer() {
         description: "The name of the project to set as active"
       }
     ],
-    handler: async ({ project_name }) => {
+    handler: async ({ project_name }: { project_name: string }) => {
       return projectManager.setCurrentProject(project_name);
     }
   });
@@ -76,7 +76,7 @@ export async function startServer() {
         required: false
       }
     ],
-    handler: async ({ file_type }) => {
+    handler: async ({ file_type }: { file_type?: string }) => {
       return projectManager.getProjectFiles(undefined, file_type);
     }
   });
@@ -106,7 +106,7 @@ export async function startServer() {
         description: "The Gradle task to run (e.g., 'assembleDebug', 'test')"
       }
     ],
-    handler: async ({ task }) => {
+    handler: async ({ task }: { task: string }) => {
       return projectManager.runGradleTask(task);
     }
   });

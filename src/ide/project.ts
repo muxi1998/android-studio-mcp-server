@@ -107,7 +107,7 @@ export class ProjectManager {
       const files = await listFiles(projectPath);
       
       if (fileType) {
-        return files.filter(file => file.endsWith(`.${fileType}`));
+        return files.filter((file: string) => file.endsWith(`.${fileType}`));
       }
       
       return files;
@@ -123,7 +123,7 @@ export class ProjectManager {
       ];
       
       if (fileType) {
-        return sampleFiles.filter(file => file.endsWith(`.${fileType}`));
+        return sampleFiles.filter((file: string) => file.endsWith(`.${fileType}`));
       }
       
       return sampleFiles;
