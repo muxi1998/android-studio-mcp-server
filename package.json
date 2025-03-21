@@ -1,0 +1,38 @@
+{
+  "name": "android-studio-mcp-server",
+  "version": "0.1.0",
+  "description": "A Model Context Protocol server for Android Studio automation",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "android-studio-mcp-server": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "start": "node build/index.js"
+  },
+  "main": "build/index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [
+    "android",
+    "android-studio",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "yaml": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+} 
