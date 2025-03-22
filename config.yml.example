@@ -1,4 +1,0 @@
-android_studio:
-  path: "/Applications/Android Studio.app"
-projects:
-  base_dir: "~/AndroidStudioProjects" 
